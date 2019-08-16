@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'category_view.dart';
+
 class HomeTop extends StatelessWidget {
 
   final Animation<double> containerGrow;
@@ -21,7 +23,7 @@ class HomeTop extends StatelessWidget {
       ),
       child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
               "Bem vindo, Marcelo",
@@ -61,7 +63,8 @@ class HomeTop extends StatelessWidget {
                   color: Color.fromRGBO(80, 210, 194, 1.0)
                 ),
               ),
-            )
+            ),
+            CategoryView(),
           ],
         )
       ),

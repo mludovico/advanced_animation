@@ -3,6 +3,8 @@ import 'package:advanced_animation/widgets/signup_button.dart';
 import 'package:advanced_animation/widgets/stagger_animation.dart';
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -20,6 +22,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
       vsync: this,
       duration: Duration(seconds: 2)
     );
+    _animationController.addStatusListener((status){
+      if(status == AnimationStatus.completed)
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context)=>HomeScreen()
+          )
+        );
+    });
   }
 
 
